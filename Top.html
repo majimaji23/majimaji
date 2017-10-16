@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SCEPTRE｜ラグビーメーカー</title>
+<link href="../../../Users/majimaji/Desktop/sceptre/CSS/Top.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="container">
+	<header>
+	<nav class="globalNav clearfix">
+		<div class="Navi">
+			<h1 class="botton"><a href="../../../Users/majimaji/Desktop/sceptre/HTML/Top.html"><img src="../../../Users/majimaji/Desktop/sceptre/Image/headerLogo_off.png" alt="SCEPTRE"></a></h1>
+			<h2><img src="../../../Users/majimaji/Desktop/sceptre/Image/Nav_pic/header_copy.png"></h2>
+			<ul class="clearfix botton">
+				<li><a href="../../../Users/majimaji/Desktop/sceptre/HTML/News.html"><img src="../../../Users/majimaji/Desktop/sceptre/Image/Nav_pic/headerNav0_off.png" alt="news"></a></li>
+				<li><p><img src="../../../Users/majimaji/Desktop/sceptre/Image/Nav_pic/headerNavMark.png"></p></li>
+				<li><a href="../../../Users/majimaji/Desktop/sceptre/HTML/History.html"><img src="../../../Users/majimaji/Desktop/sceptre/Image/Nav_pic/headerNav1_off.png" alt="history"></a></li>
+				<li><p><img src="../../../Users/majimaji/Desktop/sceptre/Image/Nav_pic/headerNavMark.png"></p></li>
+				<li><a href="../../../Users/majimaji/Desktop/sceptre/HTML/company.html"><img src="../../../Users/majimaji/Desktop/sceptre/Image/Nav_pic/headerNav2_off.png" alt="company"></a></li>
+				<li><p><img src="../../../Users/majimaji/Desktop/sceptre/Image/Nav_pic/headerNavMark.png"></p></li>
+				<li><a href="../../../Users/majimaji/Desktop/sceptre/HTML/Link.html"><img src="../../../Users/majimaji/Desktop/sceptre/Image/Nav_pic/headerNav3_off.png" alt="link"></a></li>
+				<li><p><img src="../../../Users/majimaji/Desktop/sceptre/Image/Nav_pic/headerNavMark.png"></p></li>
+				<li><a href="../../../Users/majimaji/Desktop/sceptre/HTML/Contact.html"><img src="../../../Users/majimaji/Desktop/sceptre/Image/Nav_pic/headerNav4_off.png" alt="contact"></a></li>
+			</ul>
+		</div>
+	</nav>
+	</header>
+	<div class="slider">
+		<p id="count">1457</p>
+	</div>
+
+
+	<p></p>
+	<div class="footer">
+		<footer>
+			<p class="star"><img src="../../../Users/majimaji/Desktop/sceptre/Image/Top_banner/footerLinkStar.png"></p>
+			<ul class="clearfix botton">
+				<li><a href=""><img src="../../../Users/majimaji/Desktop/sceptre/Image/Top_banner/SCPTRE_banner_shibuya_off.png"></a></li>
+				<li><a href=""><img src="../../../Users/majimaji/Desktop/sceptre/Image/Top_banner/SCPTRE_banner_catalog_off.png"></a></li>
+				<li><a href=""><img src="../../../Users/majimaji/Desktop/sceptre/Image/Top_banner/SCPTRE_banner_color_off.png"></a></li>
+				<li><a href=""><img src="../../../Users/majimaji/Desktop/sceptre/Image/Top_banner/SCPTRE_banner_blog_off.png"></a></li>
+			</ul>
+		</footer>
+	</div>
+</div>
+
+<script src="../../../Users/majimaji/Desktop/sceptre/Javascript/jquery-3.2.1.min.js"></script>
+<script src="../../../Users/majimaji/Desktop/sceptre/Javascript/jquery.bgswitcher.js" type="text/javascript"></script>
+<script>
+	var _number = 1920;
+	
+	$(function(){
+		$({count: _number}).animate({count: _number+100},{
+		duration: 6000,
+		easing: 'linear',
+		progress: function(){
+			$('#count').text(Math.ceil(this.count));
+		}
+		});
+		$('#count').fadeOut(5000),
+		setTimeout(function(){
+        $('.slider').bgSwitcher({
+			images:['../Image/Top_pic_1/top-picture_01.jpg','../Image/Top_pic_1/top-picture_02+.jpg','../Image/Top_pic_1/top-picture_03.jpg','../Image/Top_pic_1/top-picture_04+.jpg','../Image/Top_pic_1/top-picture_05.jpg','../Image/Top_pic_1/top-picture_06.jpg','../Image/Top_pic_1/top-picture_07+.jpg','../Image/Top_pic_1/top-picture_00.jpg'],
+		});
+		},5000);
+		
+	});
+</script>
+
+<script>
+	$(function(){
+		$('.botton a img').hover(function(){
+			$(this).attr('src',$(this).attr('src').replace('_off','_on'));
+			},function(){
+				if(!$(this).hasClass('currentPage')) {
+				$(this).attr('src', $(this).attr('src').replace('_on','_off'));
+		}
+		});
+	});
+	
+</script>
+
+</body>
+</html>
